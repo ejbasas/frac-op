@@ -2,7 +2,7 @@
 name = "frac-op"
 version = "0.1.0"
 entrypoint = "lib.typ"
-authors = ["Étienne J. Basas"]
+authors = ["Étienne J. Basas <https://github.com/ejbasas>"]
 repository = "https://github.com/ejbasas/frac-op"
 license = "MIT"
 description = "Operations on fractions."

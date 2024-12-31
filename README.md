@@ -7,26 +7,25 @@ Frac-op is a library for performing mathematical operations on fractions with [T
 ```typ
 #import "fractions.typ" as frac
 
-#frac.opposite("3/18")
+#frac.simplify(5)
 
-#let q = frac.frac(5)
-#q
+#frac.simplify("15/-21")
 
-#frac.inverse(q)
+#frac.opposite("15/-21")
 
-#frac.sum("3/18", "5/12", "5/6")
+#frac.sum(2, "3/18", "5/12", "5/6")
 
-#frac.difference("3/18", "5/12")
+#frac.difference("3/18", decimal("0.3"))
 
-#frac.product("3/18", "5/12", "5/6")
+#frac.product("-3/18", "5/12", "5/-6")
 
 #frac.division("3/18", "5/12")
 
-#frac.display(q)
+$#frac.display("3/-18") + 3/7$
 
-#frac.display(frac.frac("3/18"))
+#frac.display("3/18", style: "display")
 
-#frac.display(frac.frac("3/18"), style: "display")
+#frac.display("5/1", style: "display")
 
-#frac.decimal("3/18")
+#frac.float("3/18")
 ```

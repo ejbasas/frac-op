@@ -46,6 +46,36 @@
   _str(_simplify(_frac(n)))
 }
 
+#let _opposite(n) = {
+  (numerator: n.numerator * -1, denominator: n.denominator)
+}
+
+#let opposite(n) = {
+  _str(_opposite(_simplify(_frac(n))))
+}
+
+#let _inverse(n) = {
+  (numerator: n.denominator, denominator: n.numerator)
+}
+
+#let inverse(n) = {
+  _str(_simplify(_inverse(_frac(n))))
+}
+
+#let display(n, style: "inline") = {
+  let n = _frac(n)
+  if n.denominator == 1 {
+    n.numerator
+  } else {
+    eval("$" + style + "((" + str(n.numerator) + ")/(" + str(n.denominator) + "))$") 
+  }
+}
+
+#let float(n) = {
+  let n = _simplify(_frac(n))
+  n.numerator/n.denominator
+}
+
 #let _sum(..args) = {
   let denominator = args.pos().map(n => n.denominator).dedup().reduce(calc.lcm)
   _simplify((
@@ -59,14 +89,6 @@
 #let sum(..args) = {
   let args = args.pos().map(_frac).map(_simplify)
   _str(_sum(..args))
-}
-
-#let _opposite(n) = {
-  (numerator: n.numerator * -1, denominator: n.denominator)
-}
-
-#let opposite(n) = {
-  _str(_opposite(_simplify(_frac(n))))
 }
 
 #let difference(n, m) = {
@@ -86,32 +108,9 @@
   _str(_product(..args))
 }
 
-#let _inverse(n) = {
-  (numerator: n.denominator, denominator: n.numerator)
-}
-
-#let inverse(n) = {
-  _str(_simplify(_inverse(_frac(n))))
-}
-
 #let division(n, m) = {
   (n, m) = (n, m).map(_frac).map(_simplify)
   product(n, _inverse(m))
-}
-
-#let float(n) = {
-  let n = _simplify(_frac(n))
-  n.numerator/n.denominator
-}
-
-#let display(n, style: "inline") = {
-//  $#str(n.numerator) / #str(n.denominator)$
-  let n = _frac(n)
-  if n.denominator == 1 {
-    n.numerator
-  } else {
-    eval("$" + style + "((" + str(n.numerator) + ")/(" + str(n.denominator) + "))$") 
-  }
 }
 
 #let _eq(..args) = {

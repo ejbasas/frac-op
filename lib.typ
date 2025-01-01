@@ -22,7 +22,11 @@
 }
 
 #let _str(n) = {
-  str(n.numerator)+"/"+str(n.denominator)
+  /**
+  "-" (U+002D) and the minus sign "−" (U+2212) are not the same.
+  The str() function generates the minus sign.
+  **/
+  str(n.numerator).replace("−","-")+"/"+str(n.denominator).replace("−","-")
 }
 
 #let _simplify(n) = {

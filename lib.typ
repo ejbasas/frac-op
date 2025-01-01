@@ -109,3 +109,13 @@
     eval("$" + style + "((" + str(n.numerator) + ")/(" + str(n.denominator) + "))$") 
   }
 }
+
+#let _eq(..args) = {
+  let denominator = args.pos().map(n => n.denominator).dedup().reduce(calc.lcm)
+  args.pos().map(n => calc.div-euclid(denominator, n.denominator)*n.numerator).dedup().len() == 1
+}
+
+#let eq(..args) = {
+  let args = args.pos().map(_frac).map(_simplify)
+  _eq(..args)
+}

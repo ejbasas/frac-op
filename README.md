@@ -30,4 +30,8 @@ $#frac.display("3/-18") + 3/7$
 #frac.display("5/1", style: "display")
 
 #frac.float("3/18")
+
+#frac.eq("-4/-8", frac.opposite("-4/8"), "5/10")
+
+#frac.eq("-4/-8", "-1/2", "5/10")
 ```

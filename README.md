@@ -2,7 +2,7 @@
 
 Fractus is a library for performing mathematical operations on fractions with [Typst](https://typst.app).
 
-In the etymology tree of the word *fraction*, *fractus* is the past participle of the Latin verb frangere (to break).
+In the etymology tree of the word *fraction*, *fractus* is the past participle of the Latin verb *frangere* (to break).
 
 ## Examples
 

@@ -91,7 +91,7 @@
 }
 
 #let inverse(n) = {
-  _str(_inverse(_simplify(_frac(n))))
+  _str(_simplify(_inverse(_frac(n))))
 }
 
 #let division(n, m) = {

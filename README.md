@@ -1,11 +1,13 @@
-# Frac-op
+# Fractus
 
-Frac-op is a library for performing mathematical operations on fractions with [Typst](https://typst.app).
+Fractus is a library for performing mathematical operations on fractions with [Typst](https://typst.app).
+
+In the etymology tree of the word *fraction*, *fractus* is the past participle of the Latin verb frangere (to break).
 
 ## Examples
 
 ```typ
-#import "fractions.typ" as frac
+#import "@preview/fractus:0.1.0" as frac
 
 #frac.simplify(5)
 
